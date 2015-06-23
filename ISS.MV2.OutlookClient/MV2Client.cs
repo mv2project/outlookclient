@@ -7,7 +7,7 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using Office = Microsoft.Office.Core;
 
 namespace ISS.MV2.OutlookClient {
-    public partial class ThisAddIn {
+    public partial class MV2Client {
         private void ThisAddIn_Startup(object sender, System.EventArgs e) {
 
         }

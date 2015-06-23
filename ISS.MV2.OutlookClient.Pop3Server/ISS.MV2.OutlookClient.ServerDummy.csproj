@@ -46,11 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pop3\Pop3MessageParser.cs" />
+    <Compile Include="Pop3\Pop3MessageParserFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerCore\ClientWorker.cs" />
     <Compile Include="ServerCore\IMessageParser.cs" />
     <Compile Include="ServerCore\IMessageHandler.cs" />
     <Compile Include="ServerCore\IMessageParserFactory.cs" />
+    <Compile Include="ServerCore\LoggingHandler.cs" />
     <Compile Include="ServerCore\Server.cs" />
   </ItemGroup>
   <ItemGroup />

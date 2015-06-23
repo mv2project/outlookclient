@@ -20,6 +20,7 @@ namespace ISS.MV2.OutlookClient.ServerDummy.ServerCore {
             this.parser = factory.CreateParser(client);
             factory.RegisterHandlers(this);
             this.workerThread = new Thread(DoWork);
+            Register(new LoggingHandler<I, O>());
         }
 
         public void Register(IMessageHandler<I, O> handler) {

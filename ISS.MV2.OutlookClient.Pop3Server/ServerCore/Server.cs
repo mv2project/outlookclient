@@ -35,6 +35,7 @@ namespace ISS.MV2.OutlookClient.ServerDummy.ServerCore {
         public void Start() {
             lock (state_changes_lock) {
                 if (started) return;
+                started = true;
                 serverListener = new TcpListener(IPAddress.Loopback, port);
                 serverThread = new Thread(Server_Work);
                 serverThread.Start(serverListener);

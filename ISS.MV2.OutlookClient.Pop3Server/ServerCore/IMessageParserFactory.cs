@@ -13,5 +13,7 @@ namespace ISS.MV2.OutlookClient.ServerDummy.ServerCore {
         void RegisterHandlers(ClientWorker<I, O> clientWorker);
 
 
+
+
     }
 }

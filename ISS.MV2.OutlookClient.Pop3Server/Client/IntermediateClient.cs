@@ -54,9 +54,9 @@ namespace ISS.MV2.OutlookClient.ServerDummy.Client {
 
         }
 
-        public void Connect(string host) {
+        public void Connect(string host, int port) {
             if (connection != null) throw new IOException("Already connected!");
-            connection = new TcpClient(host, 443);
+            connection = new TcpClient(host, port);
             connectionStream = connection.GetStream();
             parser = new MessageParser(connectionStream);
             parser.Settings = new AESWithRSACryptoSettings();

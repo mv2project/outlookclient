@@ -19,5 +19,9 @@ namespace ISS.MV2.OutlookClient.ServerDummy.Pop3 {
             return message.StartsWith(expected, StringComparison.OrdinalIgnoreCase);
         }
 
+        public void Fail(IMessageParser<string, string> parser, string message) {
+            parser.Send("-ERR " + message);
+        }
+
     }
 }

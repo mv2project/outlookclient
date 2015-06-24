@@ -13,14 +13,29 @@ using ISS.MV2.OutlookClient.ServerDummy.Client;
 
 
 namespace ISS.MV2.OutlookClient.ServerDummy {
-    public class Session {
+    public class Session : ClientSession {
 
-        public string Username { get; set; }
-        public string Passphrase { get; set; }
 
         public X509Certificate UserCertificate { get; set; }
         public AsymmetricKeyParameter UserPrivateKey { get; set; }
 
+
+
+
+        public override ICommunicationPartner CreateClient() {
+            IntermediateClient intermediateClient = new IntermediateClient();
+            string host = Identifier.Split('@')[1].Trim();
+            intermediateClient.Connect(host, 4503);
+            return intermediateClient;
+        }
+
+        public override IMessageCryptorSettings CreateNewCryptorSettings() {
+            return new AESWithRSACryptoSettings();
+        }
+
+        public override IMessageCryptorSettings CryptorSettings {
+            get { return new AESWithRSACryptoSettings(); }
+        }
 
 
     }

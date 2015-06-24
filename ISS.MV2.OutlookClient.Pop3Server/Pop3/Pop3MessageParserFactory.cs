@@ -14,9 +14,11 @@ namespace ISS.MV2.OutlookClient.ServerDummy.Pop3 {
         }
 
         public void RegisterHandlers(ClientWorker<string, string> clientWorker) {
+            Session session = new Session();
             clientWorker.ConnectedHandler = this;
             clientWorker.RegisterUnrecognizedHandler(new Pop3UnrecognizedMessageHandler());
-            clientWorker.Register(new UserMessageHandler());
+            clientWorker.Register(new UserMessageHandler(session));
+            clientWorker.Register(new PassMessageHandler(session));
         }
 
         public void Connected(IMessageParser<string, string> parser) {

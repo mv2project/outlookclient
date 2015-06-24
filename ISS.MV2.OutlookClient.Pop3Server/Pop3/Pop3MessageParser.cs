@@ -25,10 +25,15 @@ namespace ISS.MV2.OutlookClient.ServerDummy.Pop3 {
         }
 
         public string ReadNext() {
-            return reader.ReadLine();
+            string result = reader.ReadLine();
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(result);
+            return result;
         }
 
         public void Send(string output) {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(output);
             writer.WriteLine(output);
             writer.Flush();
         }

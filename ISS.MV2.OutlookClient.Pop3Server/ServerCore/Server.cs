@@ -48,10 +48,8 @@ namespace ISS.MV2.OutlookClient.ServerDummy.ServerCore {
             listener.Start(10);
             TcpClient client;
             while (started) {
-                if (listener.Pending()) {
-                    client = listener.AcceptTcpClient();
-                    new ClientWorker<I, O>(factory, client).Start();
-                }
+                client = listener.AcceptTcpClient();
+                new ClientWorker<I, O>(factory, client).Start();
             }
 
         }

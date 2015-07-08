@@ -31,10 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="crypto">
-      <HintPath>..\..\Git\WebClient\MV2CorePortable\bin\Debug\crypto.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\crypto.dll</HintPath>
     </Reference>
     <Reference Include="MV2Core">
-      <HintPath>..\..\Git\WebClient\MV2CorePortable\bin\Debug\MV2Core.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\MV2Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -45,8 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Client\InstantDispatcher.cs" />
     <Compile Include="Client\IntermediateClient.cs" />
+    <Compile Include="Pop3\PassMessageHandler.cs" />
     <Compile Include="Pop3\Pop3MessageHandler.cs" />
+    <Compile Include="Pop3\Pop3MessageInterpreter.cs" />
     <Compile Include="Pop3\Pop3MessageParser.cs" />
     <Compile Include="Pop3\Pop3MessageParserFactory.cs" />
     <Compile Include="Pop3\Pop3UnrecognizedMessageHandler.cs" />
